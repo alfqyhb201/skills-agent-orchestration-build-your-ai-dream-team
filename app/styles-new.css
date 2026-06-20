@@ -47,18 +47,15 @@
   --transition-base: 150ms ease-out;
 }
 
-/* Global reset and base typography */
-*,
-*::before,
-*::after {
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -90,14 +87,15 @@ header h1 {
   margin: 0;
 }
 
+/* Main content area */
 main {
-  padding: var(--spacing-2xl) var(--spacing-lg);
-  min-height: calc(100vh - 120px);
+  padding: var(--spacing-2xl) var(--spacing-xl);
   max-width: 1400px;
   margin: 0 auto;
+  min-height: calc(100vh - 100px);
 }
 
-/* Dashboard container: clean responsive grid */
+/* Dashboard grid */
 .dashboard {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -284,6 +282,44 @@ main {
   word-wrap: break-word;
 }
 
+/* Error states */
+#error-state {
+  grid-column: 1 / -1;
+  padding: var(--spacing-xl);
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-lg);
+  color: #7f1d1d;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+#error-state strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+#error-state small {
+  display: block;
+  margin-top: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: #a12a2a;
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -337,28 +373,22 @@ main {
   }
 }
 
-/* Print styles */
-@media print {
-  body {
-    background-color: white;
-  }
-  
-  header {
-    background-color: white;
-    border-bottom: 1px solid #d1d5db;
-  }
-  
-  .project-card {
-    page-break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #d1d5db;
-    background-color: white;
-  }
-  
-  .project-card:hover {
-    transform: none;
-    background-color: white;
+/* Accessibility: focus visible styles for keyboard navigation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-/* End of styles */
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .project-card {
+    border-width: 2px;
+  }
+  
+  .status-badge {
+    outline: 1px solid currentColor;
+  }
+}
