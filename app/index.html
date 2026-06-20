@@ -28,7 +28,7 @@
   <main>
     <div id="error" role="alert" aria-live="assertive" hidden></div>
 
-    <section id="projects" role="list" aria-label="Project list">
+    <section id="projects" class="dashboard" role="list" aria-label="Project list">
       <!-- Project cards will be rendered here -->
     </section>
   </main>
@@ -124,7 +124,7 @@
     }
 
     // Fetch project data and render
-    fetch('project-data.json', { cache: 'no-store' })
+    fetch('./project-data.json', { cache: 'no-store' })
       .then(function (res) {
         if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
         return res.json();
