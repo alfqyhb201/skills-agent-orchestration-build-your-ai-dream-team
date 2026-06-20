@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "name": "Website Redesign",
+      "owner": "Ava Johnson",
+      "status": "on-track",
+      "recentActivity": "Deployed homepage prototype to staging. Collected feedback from design review and queued improvements.",
+      "priority": "High"
+    },
+    {
+      "name": "Mobile App v2",
+      "owner": "Liam Smith",
+      "status": "at-risk",
+      "recentActivity": "Encountered performance regressions in image loading. Investigation in progress; ETA for fix is 3 days.",
+      "priority": "Medium"
+    },
+    {
+      "name": "Data Warehouse Migration",
+      "owner": "Noah Patel",
+      "status": "blocked",
+      "recentActivity": "Vendor update required for migration tooling; waiting on vendor response to unblock data exports.",
+      "priority": "High"
+    },
+    {
+      "name": "Customer Onboarding Flow",
+      "owner": "Sophia Lee",
+      "status": "on-track",
+      "recentActivity": "A/B test for welcome emails shows a 12% lift. Preparing rollout plan for next sprint.",
+      "priority": "Low"
+    }
+  ]
+}
